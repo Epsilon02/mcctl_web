@@ -1,0 +1,14 @@
+{% block content %}
+    {# <h3>Terminal</h3> #}
+    <div class="terminal-grid">
+        <div class="layer-grid">
+            <textarea wrap="off" class="output" id="output" readonly></textarea>
+        </div>
+        <div class="command-grid">
+            <button type="button" class="button1" id="send-button">Send</button>
+        </div>
+        <div class="command-grid">
+            <input class="cmdline" id="cmdline" autofocus />
+        </div>
+    </div>
+{% endblock content %}

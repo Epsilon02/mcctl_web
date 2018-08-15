@@ -1,0 +1,6 @@
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/netdata-colors.css') }}">
+<div data-netdata="system.cpu"
+     data-host="{{ netdata_server }}">
+    </div>
+{% endblock content %}

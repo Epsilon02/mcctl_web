@@ -1,0 +1,23 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-column-gap: 2%;
+    grid-row-gap: 3pt;
+}
+
+.terminal-grid {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-row-gap: 1pt;
+}
+
+.command-grid {
+    grid-row: 2;
+}
+
+.layer-grid {
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 100%;
+}
