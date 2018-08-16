@@ -6,13 +6,13 @@ from flask import render_template, Blueprint, jsonify
 from flask_socketio import send
 from mcctlweb import socketio
 
-from mcctlweb.classes.mc_server import MCServer
+from mcctlweb.classes.mc_server import MCServer, mcServer
 
 main = Blueprint('main', __name__)
 
 server_stat_id = 1
 netdata_server = "http://localhost:19999/"
-server = MCServer()
+# server = mcServer()
 
 
 @main.route('/')
@@ -29,7 +29,7 @@ def about():
 @main.route("/start", methods=['GET'])
 def start():
     data = {'key': 'Starting Server'}
-    server.start()
+    # server.start()
     # if not terminal_thread.is_alive():
     #     terminal_thread.start()
     time.sleep(1)
@@ -39,7 +39,7 @@ def start():
 @main.route("/stop", methods=['GET'])
 def stop():
     data = {'key': 'Server stopped!'}
-    server.stop_server()
+    # server.stop_server()
     id = 1
     # if terminal_thread.is_alive():
     #     terminal_thread.stop()
@@ -67,4 +67,5 @@ def handle_message(message):
 
 @socketio.on('terminal')
 def handle_terminal(command):
-    server.run_command(command)
+    print(command)
+    # server.run_command(command)

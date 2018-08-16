@@ -20,4 +20,9 @@ $(document).ready(function() {
     terminalSocket.on('terminal', function(terminalMsg) {
         output.append(terminalMsg);
     });
+
+    $('#send-button').on('click', function () {
+       terminalSocket.send(cmdline.val());
+    });
+
 });
